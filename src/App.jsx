@@ -1,5 +1,7 @@
+import Stars from './components/Stars/Stars'
+
 function App() {
-  return <div></div>
+  return <Stars count={1} />
 }
 
 export default App
