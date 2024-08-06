@@ -1,0 +1,13 @@
+.input {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  font-size: 24px;
+
+  display: block;
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  letter-spacing: 5px;
+  font-weight: bold;
+}
