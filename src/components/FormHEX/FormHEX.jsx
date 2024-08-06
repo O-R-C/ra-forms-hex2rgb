@@ -17,10 +17,6 @@ const FormHEX = ({ value, onInputChange }) => {
   )
 }
 
-FormHEX.defaultProps = {
-  value: '#',
-}
-
 FormHEX.propTypes = {
   value: propTypes.string,
   onInputChange: propTypes.func,
