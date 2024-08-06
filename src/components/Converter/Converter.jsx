@@ -5,6 +5,7 @@ import styles from './Converter.module.css'
 
 const Converter = () => {
   const [value, setValue] = useState('#')
+  const [valueRGB, setValueRGB] = useState(null)
 
   const onInputChange = ({ target: { value } }) => {
     if (value[0] !== '#') return
@@ -12,6 +13,12 @@ const Converter = () => {
     if (value.substr(1).match(/[^0-9a-f]/gi)) return
 
     setValue(value)
+
+    if (value.length === 7) {
+      const [r, g, b] = value.substr(1).match(/.{2}/g)
+
+      setValueRGB(`rgb(${Number.parseInt(r, 16)}, ${Number.parseInt(g, 16)}, ${Number.parseInt(b, 16)})`)
+    }
   }
 
   return (
@@ -20,7 +27,7 @@ const Converter = () => {
         value={value}
         onInputChange={onInputChange}
       />
-      <ResultRGB />
+      <ResultRGB valueRGB={valueRGB} />
     </div>
   )
 }
